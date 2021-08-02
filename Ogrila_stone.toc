@@ -1,0 +1,12 @@
+## Interface: 20501
+## Title: Ogrila stone for dummies
+## Notes: Memory span of a goldfish + Apexis Relics = No problem!
+## Notes-frFR: Aide pour les combinaisons de reliques aux monuments apogides.
+## Version: 1.5
+## Author: foxlit, reforged by lancestre
+## X-Website: 
+## SavedVariables: Relic_ShowTooltip, Relic_UnbindCombat, Relic_KeyBindings, Relic_EnableHotkeys
+Relic.locale.lua
+Relic.ui.xml
+Relic.ui.lua
+Relic.config.lua
