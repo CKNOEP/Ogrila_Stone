@@ -31,6 +31,23 @@ LL["deDE"] = {
 	caption="Ogri'La  Relic Remember",
 };
 
+-- Russian (contributed by Хоргул-Гордунни)
+LL["ruRU"] = {
+	colors={"|cff22ff22Зеленый|r","|cffeeee22Желтый|r","|cff2288ffСиний|r","|cffff2200Красный|r"},
+	colorDefaultKeys={"З", "Ж", "С", "К"},
+	colorClick="Добавить %s реликвию",
+	colorHotkey="Или нажмите %s.",
+	caption="Запомнить реликвию Огри'ла",
+	remove="ЛКМ, чтобы удалить это.\nПКМ, чтобы удалить здесь.",
+	unbinderror="Вы в бою - комбинации клавиш обновятся, когда вы закончите.",
+	nosuchkeyset="Допустимые наборы клавиш: %s или %s по умолчанию.",
+	cfgShowTooltip="Показать всплывающие подсказки",
+	cfgUnbindInCombat="Отключить горячие клавиши в бою",
+	cfgEnableHotkeys="Включите горячие клавиши, пока отображаются камни Огри'ла",
+	cfgLanguageSelector="Язык: %s",
+	cfgKeybindings="Привязки клавиш",
+};
+
 -- French [contributed by oXid_Fox]
 LL["frFR"] = {
 	colors={"|cff22ff22verte|r","|cffeeee22jaune|r","|cff2288ffbleue|r","|cffff2200rouge|r"},
