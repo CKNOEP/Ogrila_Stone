@@ -44,10 +44,41 @@
 		<Frames>
 			<Button parentKey="close" inherits="UIPanelCloseButton">
 				<Size x="32" y="32"/>
+				
 				<Anchors>
 					<Anchor point="TOPRIGHT" x="1" y="1"/>
 				</Anchors>
 			</Button>
+			<Button parentKey="config" inherits="UIPanelButtonTemplate" text="*">
+				<Size x="20" y="20"/>
+				
+			
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="-41.5" y="-57"/>
+				</Anchors>
+		<Scripts>
+			<OnEnter>
+				if (Relic_ShowTooltip ~= false) then
+					GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+					
+					GameTooltip:AddLine("Config", NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, 1)
+					GameTooltip:Show()
+				end
+			</OnEnter>
+			<OnLeave>
+				if GameTooltip:IsOwned(self) then
+					GameTooltip:Hide()
+				end
+			</OnLeave>
+			<OnClick>
+			InterfaceOptionsFrame_OpenToCategory("Ogrila Stone")
+			InterfaceOptionsFrame_OpenToCategory("Ogrila Stone")
+			</OnClick>
+			
+		</Scripts>
+			
+			</Button>
+			
 			<Button parentArray="replay" inherits="Relic_HiButtonTemplate" hidden="true" id="1" scale="2">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="4" y="-16"/>
