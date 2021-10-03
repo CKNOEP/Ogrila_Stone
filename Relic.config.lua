@@ -16,6 +16,7 @@ local cfgEnableHotkeys = CreateFrame("CheckButton", nil, cfgFrame, "InterfaceOpt
 
 local Relic_SpawnKeyset do
 	local function Relic_KeysetDisarm(btn)
+		GameTooltip:Hide()
 		btn:UnlockHighlight()
 		btn:SetScript("OnKeyDown", nil)
 		btn:EnableKeyboard(false)
@@ -36,13 +37,19 @@ local Relic_SpawnKeyset do
 				return
 			end
 		end
+		--print("bind record")
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+		GameTooltip:AddLine("["..L.colors[tonumber(self:GetName())].."] : Press any key to define the Bind key")
+		GameTooltip:Show()
+	
 		self:LockHighlight()
 		self:GetParent().keysetActive = self
 		self:SetScript("OnKeyDown", Relic_KeysetListen)
 		self:EnableKeyboard(true)
 	end
-	function Relic_SpawnKeyset(ofsy)
-		local btn = CreateFrame("Button", nil, cfgFrame, "UIPanelButtonTemplate")
+	function Relic_SpawnKeyset(bt_name,ofsy)
+		print(bt_name)
+		local btn = CreateFrame("Button", bt_name, cfgFrame, "UIPanelButtonTemplate")
 		btn.lbl = btn:CreateFontString(nil, "OVERLAY", "GameFontHighlightLeft")
 		btn:SetSize(125, 22)
 		btn:SetPoint("TOPLEFT", 85, ofsy)
@@ -54,7 +61,7 @@ local Relic_SpawnKeyset do
 end
 local cfgKeybindingsHeader = cfgFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalMed3")
 cfgKeybindingsHeader:SetPoint("TOPLEFT", 15, -119-24)
-local cfgGreenButton, cfgYellowButton, cfgBlueButton, cfgRedButton = Relic_SpawnKeyset(-139-24), Relic_SpawnKeyset(-163-24), Relic_SpawnKeyset(-187-24), Relic_SpawnKeyset(-211-24)
+local cfgGreenButton, cfgYellowButton, cfgBlueButton, cfgRedButton = Relic_SpawnKeyset(1,-139-24), Relic_SpawnKeyset(2,-163-24), Relic_SpawnKeyset(3,-187-24), Relic_SpawnKeyset(4,-211-24)
 
 local skipNextUpdate = false
 local function Relic_cfgSetBindingsDisplay(t)
