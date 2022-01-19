@@ -1,4 +1,4 @@
-## Interface: 20502
+## Interface: 20503
 ## Title: Ogrila stone for dummies
 ## Notes: Memory span of a goldfish + Apexis Relics = No problem!
 ## Notes-frFR: Aide pour les combinaisons de reliques aux monuments apogides.
