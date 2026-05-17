@@ -1,0 +1,12 @@
+lightweight tag 6fa418fb8c77089a95ddff5bcdc3e9dd9e843492 3.4.2.0
+Author:	LANCESTRE <lancetre@intenebris.org>
+Date:	Wed Jun 21 21:37:56 2023 +0200
+
+commit 6fa418fb8c77089a95ddff5bcdc3e9dd9e843492
+Author: LANCESTRE <lancetre@intenebris.org>
+Date:   Wed Jun 21 21:37:56 2023 +0200
+
+    Update Ogrila_stone.toc
+    
+    30402
+
