@@ -141,8 +141,14 @@ local function Relic_GossipOption(index) -- posthook for SelectGossipOption
 		local guid = UnitGUID("npc")
 		if ACTIVATION_OBJECT_IDS[tonumber(guid and guid:match("^GameObject%-.-%-(%d+)%-%x+$") or 0)] then
 			Relic_View:Show()
-			
+
 		end
+	end
+end
+local function Relic_GossipShow()
+	local guid = UnitGUID("npc")
+	if ACTIVATION_OBJECT_IDS[tonumber(guid and guid:match("^GameObject%-.-%-(%d+)%-%x+$") or 0)] then
+		Relic_View:Show()
 	end
 end
 local function Relic_BuffUpdate(self)
@@ -202,6 +208,14 @@ Relic_View:SetScript("OnEvent", Relic_OnEvent)
 Relic_View:RegisterEvent("PLAYER_REGEN_DISABLED")
 Relic_View:RegisterEvent("PLAYER_REGEN_ENABLED")
 Relic_View.title:SetText(L"caption")
+
+local gossipListener = CreateFrame("Frame")
+gossipListener:RegisterEvent("GOSSIP_SHOW")
+gossipListener:SetScript("OnEvent", function(self, event)
+	if event == "GOSSIP_SHOW" then
+		Relic_GossipShow()
+	end
+end)
 
 if NINE then
 	hooksecurefunc(C_GossipInfo, "SelectOption", Relic_GossipOption)
